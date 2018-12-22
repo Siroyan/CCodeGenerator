@@ -1,4 +1,5 @@
 public class Service{
+    private byte[][] rgb;
     Service(){
 
     }
