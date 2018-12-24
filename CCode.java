@@ -8,9 +8,9 @@ public class CCode{
     CCode(){
 
     }
-    public void getCCode(){
+    public void getCCode(String rawData){
         ColorNumber colorNumber = new ColorNumber();
-        colorNumber.setRawData("I have a pen.");
+        colorNumber.setRawData(rawData);
         byte[][] rgb = colorNumber.getColorNumber();
         try {
             BufferedImage img = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
