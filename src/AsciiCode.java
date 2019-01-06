@@ -9,7 +9,7 @@ public class AsciiCode{
     private byte[] asciiCode;
     public void setRawData(){
         try{
-            File file = new File("RawData.txt");
+            File file = new File("../RawData.txt");
             if(!file.exists()){
                 System.out.println("such file is not exist.");
                 return;

@@ -18,7 +18,7 @@ public class CCode{
             for(int i = 0; i < width; i = i + 10){
                 for(int j = 0; j < height; j = j + 10){
                     if(cursor < rgb.length){
-                        g.setColor(new Color((int)rgb[cursor], (int)rgb[cursor+1], (int)rgb[cursor+2]));
+                        g.setColor(new Color((int)rgb[cursor] * 2, (int)rgb[cursor+1] * 2, (int)rgb[cursor+2] * 2));
                         g.fillRect(j, i, 10, 10);
                         cursor = cursor + 3;
                     }
