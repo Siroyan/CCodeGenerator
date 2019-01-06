@@ -25,7 +25,7 @@ public class CCode{
                 }
             }
             g.dispose();
-            ImageIO.write(img, "png", new File("data.png"));
+            ImageIO.write(img, "png", new File("../data.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
