@@ -5,16 +5,18 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 public class CCode{
-    public void getCCode(String rawData){
+    public void getCCode(){
+        int width = 150;
+        int height = 150;
         AsciiCode asciiCode = new AsciiCode();
-        asciiCode.setRawData(rawData);
+        asciiCode.setRawData();
         byte[] rgb = asciiCode.getAsciiCode();
         try {
-            BufferedImage img = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
+            BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
             Graphics g = img.getGraphics();
             int cursor = 0;
-            for(int i = 0; i < 100; i = i + 10){
-                for(int j = 0; j < 100; j = j + 10){
+            for(int i = 0; i < width; i = i + 10){
+                for(int j = 0; j < height; j = j + 10){
                     if(cursor < rgb.length){
                         g.setColor(new Color((int)rgb[cursor], (int)rgb[cursor+1], (int)rgb[cursor+2]));
                         g.fillRect(j, i, 10, 10);
@@ -23,7 +25,7 @@ public class CCode{
                 }
             }
             g.dispose();
-            ImageIO.write(img, "png", new File("../data.png"));
+            ImageIO.write(img, "png", new File("data.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
